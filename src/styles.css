@@ -1,0 +1,265 @@
+.App {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  padding: 0px;
+  min-height: 100vh; 
+  
+  }
+  
+  h1 {
+    color: #333;
+  
+  }
+  
+  h6 {
+    color: #555;
+  }
+  
+  input[name='name'], input[name='date'] {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  .form-group {
+    margin: 10px 10px ;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .form-group label {
+    flex: 1; /* Allow labels to grow to fill available space */
+    margin-right: 10px; /* Add some space between label and input */
+  }
+  
+  /* Style for input fields */
+  .form-group input {
+    flex: 3; /* Allow input fields to grow to fill available space */
+    padding: 5px; /* Adjust padding as needed */
+    border: 1px solid #ccc;
+    margin-right: 100px; /* Customize the border style */
+  }
+  .form-group .btn {
+    border: #991e1e;
+  }
+  button[type="submit"] {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Remove the button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show a hand cursor on hover */
+    font-size: 16px; /* Font size */
+  }
+  
+  /* Hover effect */
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  .dashboard {
+    text-align: center;
+   
+  }
+  .dashboard-button {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #5622c8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .dashboard-button:hover {
+    background: #0056b3;
+  }
+  .result-container {
+    margin-top: 20px;
+  }
+  /* styles.css */
+
+/* Style for the navigation bar */
+.dashboard-nav {
+    background: #6345c6; /* Background color */
+    padding: 10px 0; /* Padding at the top and bottom */
+  }
+  
+  .dashboard-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard-nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .dashboard-nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last list item */
+  }
+  
+  .dashboard-nav a {
+    text-decoration: none;
+    color: white; /* Link text color */
+    font-weight: bold; /* Make the links bold */
+    font-size: 18px; /* Font size for links */
+  }
+  
+  .dashboard-nav a:hover {
+    text-decoration: underline; /* Underline links on hover */
+  }
+  
+
+  /* Add these styles to your styles.css or a separate CSS file */
+
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .event-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 300px;
+  }
+  
+  .event-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .event-title {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .event-date-time {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+
+  /* Add these styles to your styles.css or a separate CSS file */
+
+.ticket-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .ticket-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 300px;
+  }
+  
+  .event-name {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .ticket-type,
+  .ticket-price,
+  .ticket-quantity {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+  }
+  /* MyTickets.css */
+
+.my-tickets-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.ticket-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ticket-item {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.ticket-event-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ticket-event-details {
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.ticket-code {
+  color: #777;
+}
+
+
+
+.event-list-horizontal {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* Add horizontal scrolling for overflow */
+  padding: 10px 0;
+}
+
+.event-item-horizontal {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px; /* Adjust the spacing between event items */
+  width: 300px; /* Adjust the width of each event item as needed */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.event-item-horizontal:last-child {
+  margin-right: 0; /* Remove right margin for the last event item */
+}
+.upcoming-events {
+  margin-top: 20px;
+}
+/* styles.css */
+
+/* Default link style */
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Style for links when hovered */
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Style for links when active (selected) */
+.nav-link:active {
+  color: yellow; /* Change the color when clicked */
+}
+
+/* Style for links when navigating to the current route */
+.nav-link.active {
+  font-weight: normal; /* Remove bold font for the active link */
+}
