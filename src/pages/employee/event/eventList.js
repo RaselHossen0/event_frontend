@@ -1,32 +1,54 @@
 // EventList.js
 
-import React from 'react';
-import Event from './event'; // Import the Event model class
+import React, { useState, useEffect } from 'react';
 import StaffNavBar from '../dashboard/staffNavBar';
-const dummyEventData = [
-    new Event(1, 'Event 1', '2023-11-01', '10:00 AM', 'event1.jpg'),
-    new Event(2, 'Event 2', '2023-11-05', '2:30 PM', 'event2.jpg'),
+import axios from 'axios'
+const EventList = () => {
+  const [events, setEvents] = useState([]);
 
-  ];
+  useEffect(() => {
+    // Fetch events when the component mounts
+    fetchEvents();
+  }, []);
+
+  const fetchEvents = async () => {
+    try {
+      // Make the API request to fetch events using Axios
+      const response = await axios.get('http://localhost:8800/get-events');
+      
+      // Check if the request was successful (status code 2xx)
+      if (response.status === 200) {
+        // Access the response data directly
+        const result = response.data;
+        console.log('Parsed JSON result:', result);
+        setEvents(result.events);
+      } else {
+        // Handle errors (status code is not in the 2xx range)
+        console.error('Error fetching events:', response);
+      }
+    } catch (error) {
+      console.error('Error fetching events:', error.message);
+    }
+  };
   
 
-const EventList = () => {
   return (
     <div>
-      <StaffNavBar/>
+      <StaffNavBar />
       <h2>Event List</h2>
       <div className="event-container">
-        {dummyEventData.map((event) => (
-          <div key={event.id} className="event-card">
-            <img src={event.image} alt={event.title} className="event-image" />
-            <div className="event-details">
-              <h3 className="event-title">{event.title}</h3>
-              <p className="event-date-time">
-                Date: {event.startDate}, Time: {event.time}
-              </p>
-            </div>
-          </div>
-        ))}
+      {events.map((event) => (
+  <div key={event[0]} className="event-card">
+    {/* Assuming you have an 'image' property in your event data */}
+    <img src={event[4]} alt={event[1]} className="event-image" />
+    <div className="event-details">
+      <h3 className="event-title">{event[1]}</h3>
+      <p className="event-date-time">
+        Date: {new Date(event[2]).toLocaleDateString()}, Time: {new Date(event[2]).toLocaleTimeString()}
+      </p>
+    </div>
+  </div>
+))}
       </div>
     </div>
   );
